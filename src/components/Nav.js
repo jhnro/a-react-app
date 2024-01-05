@@ -1,11 +1,10 @@
 import React from "react";
-import logo from "../images/Logo.svg";
+
 
 const Nav = () => {
 
     return (
         <nav>
-            <img src={logo} alt="logo" />
             <ul>
                 <li><a href="#Home">Home</a></li>
                 <li><a href="#About">About</a></li>
