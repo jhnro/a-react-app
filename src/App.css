@@ -1,38 +1,62 @@
-.App {
+body {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#root {
+  display: grid;
+  grid-template-columns: repeat (8 , 1fr);
+  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-areas: "hd hd nav nav nav nav nav nav"
+                       "main main main main main main main main"
+                       "ft ft ft ft ft ft ft ft";
+  grid-gap: 10px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: baseline;
+
 }
 
-.App-link {
-  color: #61dafb;
+.AppHeader {
+  grid-area: hd;
+  display: inline-block;
+  padding-left: 2em;
+  
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav{
+  grid-area: nav;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: ft;
+  display: inline;
+
+}
+
+nav ul li {
+  display: inline;
+  padding-right: 2em;
+}
+
+footer section div{
+  display: inline-block;
+  vertical-align: top;
+  padding: 2em;
+}
+
+footer ul li {
+  display: block;
+  
+}
+
+header img {
+  margin-top: 20px;
 }

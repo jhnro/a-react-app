@@ -5,9 +5,11 @@ import logo from "../images/Logo.svg";
 const Header = () => {
 
     return (
-        <header>
-            <img src={logo} alt="logo" />
+        <header className="AppHeader">
+            <section>
+            <img src={logo} className="hdlogo" alt="Little Lemon Restaurant top logo" />
             <Nav />
+            </section>
         </header>
     );
 }

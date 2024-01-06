@@ -3,9 +3,14 @@ import smallLogo from "../images/small_logo.png";
 const Footer = () => {
 
     return (
-        <footer>
-            <img src={smallLogo} height={150} alt="Little Lemon Logo" />
-            <div><p>Doormat Navigation</p>
+        <footer className="footer">
+            
+            <section>
+            <div>
+            <img src={smallLogo} className="ftlogo" height={150} alt="Little Lemon Logo" />
+            </div>
+            <div>
+            <h3>Doormat Navigation</h3>
             <ul>
                 <li><a href="#Home">Home</a></li>
                 <li><a href="#About">About</a></li>
@@ -15,20 +20,22 @@ const Footer = () => {
                 <li><a href="#Login">Login</a></li>
             </ul>
             </div>
-            <div><p>Contact</p>
+            <div>
+            <h3>Contact</h3>
             <ul>
                 <li><a href="#Address">Address</a></li>
                 <li><a href="#Phone">Phone number</a></li>
                 <li><a href="#Email">Email</a></li>
             </ul>
             </div>
-            <div><p>Social Media Links</p>
+            <div><h3>Social Media Links</h3>
             <ul>
                 <li><a href="#Address">Address</a></li>
                 <li><a href="#Phone">Phone number</a></li>
                 <li><a href="#Email">Email</a></li>
             </ul>
             </div>
+            </section>
         </footer>
     );
 }
