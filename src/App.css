@@ -7,9 +7,11 @@ body {
 #root {
   display: grid;
   grid-template-columns: repeat (8 , 1fr);
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr 3fr 1fr 1fr;
   grid-template-areas: "hd hd nav nav nav nav nav nav"
+                       "book book book book book book book book"
                        "main main main main main main main main"
+                       "about about about about about about about about"
                        "ft ft ft ft ft ft ft ft";
   grid-gap: 10px;
   justify-content: center;
@@ -21,7 +23,7 @@ body {
   grid-area: hd;
   display: inline-block;
   padding-left: 2em;
-  
+
 
 }
 
@@ -35,6 +37,10 @@ body {
   grid-area: main;
 }
 
+.about{
+  grid-area: about;
+  
+}
 .footer {
   grid-area: ft;
   display: inline;
