@@ -6,16 +6,17 @@ body {
 
 #root {
   display: grid;
-  grid-template-columns: repeat (8 , 1fr);
-  grid-template-rows: 1fr 1fr 3fr 1fr 1fr;
+  grid-template-columns: 8fr;
+  grid-template-rows: 0.20fr 1fr 1fr 1fr 1fr 200px;
   grid-template-areas: "hd hd nav nav nav nav nav nav"
+                       "cta cta cta cta cta cta cta cta"
                        "book book book book book book book book"
                        "main main main main main main main main"
-                       "about about about about about about about about"
+                       "abo abo abo abo abo abo abo abo"
                        "ft ft ft ft ft ft ft ft";
   grid-gap: 10px;
   justify-content: center;
-  align-items: baseline;
+  align-items: start;
 
 }
 
@@ -23,34 +24,100 @@ body {
   grid-area: hd;
   display: inline-block;
   padding-left: 2em;
-
+  
 
 }
 
 .nav{
   grid-area: nav;
   display: inline-block;
-  margin-top: 10px;
+  
 }
 
+.cta {
+  position: relative;
+  width: 100%;
+  grid-area: cta;
+  grid-gap: 20px;
+  background-color:#495E57;
+  color: white;
+}
+
+.cta h1 {
+  color: #f4CE14;
+}
+
+.cta div {
+  display: inline-block;
+  text-align: left;
+}
+.cta div:nth-child(1){
+  vertical-align: top;
+  width: 250px;
+}
+
+.cta div:nth-child(2) {
+  padding: 2em;
+  
+}
+.cta img {
+  border-radius: 16pt;
+}
+.buttonCta {
+  background-color: #f4CE14;
+  color: #495E57;
+  font-weight: bold;
+  padding: 1em;
+  border-radius: 16pt;
+}
+.buttonCta:hover {
+  background-color: #978215;
+  color: #495E57;
+}
 .main {
   grid-area: main;
+  
 }
 
 .about{
-  grid-area: about;
-  
-}
-.footer {
-  grid-area: ft;
+
+  grid-area: abo;
   display: inline;
 
+}
+
+.about div {
+  width: 250px;
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  padding: 2em;
+  
+}
+
+.about img {
+  border-radius: 16pt;
+}
+
+.footer {
+  width: 100%;
+  grid-area: ft;
+  display: inline;
+  color: white;
+  background-color: #495E57;
+  
+
+}
+.footer .ftr-logo img{
+  background-color: white;
+  padding: 5px;
 }
 
 nav ul li {
   display: inline;
-  padding-right: 2em;
+  padding-left: 2em;
 }
+
 
 footer section div{
   display: inline-block;
@@ -60,9 +127,14 @@ footer section div{
 
 footer ul li {
   display: block;
+  text-align: left;
+  
   
 }
-
+footer ul li a {
+  color: white;
+}
 header img {
   margin-top: 20px;
+  margin-bottom: 0;
 }

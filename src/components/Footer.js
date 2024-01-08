@@ -3,10 +3,11 @@ import smallLogo from "../images/small_logo.png";
 const Footer = () => {
 
     return (
+        
         <footer className="footer">
             
             <section>
-            <div>
+            <div className="ftr-logo">
             <img src={smallLogo} className="ftlogo" height={150} alt="Little Lemon Logo" />
             </div>
             <div>
@@ -37,6 +38,7 @@ const Footer = () => {
             </div>
             </section>
         </footer>
+        
     );
 }
 
