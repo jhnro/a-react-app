@@ -1,13 +1,35 @@
 body {
   text-align: center;
+  font-family: 'Markazi Text', serif;
+}
+
+h1 {
+  font-size: 40pt;
+}
+h2 {
+  font-size: 20pt;
+}
+h3 {
+  font-size: 18pt;
+}
+
+
+p {
+  font-size: 16pt;
+  max-width: 65ch;
+  /* line-height: 1.5; */
 }
 
 
 
+a {
+  text-decoration: none;
+}
+
 #root {
   display: grid;
   grid-template-columns: 8fr;
-  grid-template-rows: 0.20fr 1.2fr 1fr 200px;
+  grid-template-rows: 0.20fr 1fr 1fr 200px;
   grid-template-areas: "hd hd nav nav nav nav nav nav"
                        "main main main main main main main main"
                        "abo abo abo abo abo abo abo abo"
@@ -75,21 +97,24 @@ body {
 .booking {
   background-color:#495E57;
   color: white;
+  padding-bottom: 1.5em;
 }
 .formular {
   position: relative;
   display: inline;
   width: 100%;
   grid-area: main;
-  grid-gap: 20px;
+  grid-gap: 10px;
   background-color:#495E57;
   color: white;
+  padding-bottom: 20px;
 }
 .formular div {
   display: inline-block;
-  align-items: center;
+  align-items: start;
   justify-content: start;
-  padding: 2em;
+  /* vertical-align: center; */
+  padding: 1em;
 }
 
 .formular form {
@@ -108,8 +133,8 @@ body {
 
 .confirmed {
   grid-area: main;
-  padding-top: 180px;
-  padding-bottom: 180px;
+  padding-top: 159px;
+  padding-bottom: 159px;
   background-color:#495E57;
   color: white;
 }
@@ -130,11 +155,13 @@ body {
   width: 250px;
   text-align: left;
   display: inline-block;
-  vertical-align: top;
+  vertical-align: center;
   padding: 2em;
   
 }
-
+.about div:nth-child(1) {
+  padding-top: 0;
+}
 .about img {
   border-radius: 16pt;
 }
@@ -155,7 +182,16 @@ body {
 
 nav ul li {
   display: inline;
-  padding-left: 2em;
+  margin-left: 2.2em;
+  font-size: 16pt;
+}
+
+nav a:visited {
+  color:#495E57;
+}
+
+nav a:hover {
+  color:#f4CE14;
 }
 
 footer section div{
@@ -167,12 +203,21 @@ footer section div{
 footer ul li {
   display: block;
   text-align: left;
-  
-  
+  font-size: 16pt;
 }
+
 footer ul li a {
   color: white;
 }
+
+footer a:visited {
+  color: white;
+}
+
+footer a:hover {
+  color:#f4CE14;
+}
+
 header img {
   margin-top: 20px;
   margin-bottom: 0;
