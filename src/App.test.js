@@ -41,24 +41,24 @@
 //     });
 // });
 // });
+
+
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { queryByTestId, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import BookingForm from './components/BookingForm';
 import CallToAction from './components/CallToAction';
+import Main from './components/Main';
 
-test('Renders the BookingForm heading', () => {
-    render( <BookingForm /> );
-    const headingElement = screen.getByTestId('header-table');
-    // expect(queryByTestId('header-table')).toBeInTheDocument();
+test('Renders the CallToAction heading', () => {
+    render( <BrowserRouter><CallToAction /></BrowserRouter> );
+    const headingElement = screen.getByText("Reserve Table");
     expect(headingElement).toBeInTheDocument();
-    // const reserveButton = screen.getByRole("button");
-    // fireEvent.click(reserveButton);
 
-    // const headingElementNew = screen.getByText("Choose Date");
-    // expect(headingElementNew).toBeInTheDocument();
+   
   });
 
