@@ -7,10 +7,8 @@ body {
 #root {
   display: grid;
   grid-template-columns: 8fr;
-  grid-template-rows: 0.20fr 1fr 1fr 1fr 1fr 200px;
+  grid-template-rows: 0.20fr 1.2fr 1fr 200px;
   grid-template-areas: "hd hd nav nav nav nav nav nav"
-                       "cta cta cta cta cta cta cta cta"
-                       "book book book book book book book book"
                        "main main main main main main main main"
                        "abo abo abo abo abo abo abo abo"
                        "ft ft ft ft ft ft ft ft";
@@ -37,7 +35,7 @@ body {
 .cta {
   position: relative;
   width: 100%;
-  grid-area: cta;
+  grid-area: main;
   grid-gap: 20px;
   background-color:#495E57;
   color: white;
@@ -74,6 +72,48 @@ body {
   background-color: #978215;
   color: #495E57;
 }
+.booking {
+  background-color:#495E57;
+  color: white;
+}
+.formular {
+  position: relative;
+  display: inline;
+  width: 100%;
+  grid-area: main;
+  grid-gap: 20px;
+  background-color:#495E57;
+  color: white;
+}
+.formular div {
+  display: inline-block;
+  align-items: center;
+  justify-content: start;
+  padding: 2em;
+}
+
+.formular form {
+  display: grid; 
+  display: inline-block; 
+  max-width: 200px;
+  text-align: left;
+}
+.formular form div{
+  vertical-align: center;
+  padding: 0.5em;
+}
+.formular img {
+  border-radius: 16pt;
+}
+
+.confirmed {
+  grid-area: main;
+  padding-top: 180px;
+  padding-bottom: 180px;
+  background-color:#495E57;
+  color: white;
+}
+
 .main {
   grid-area: main;
   
@@ -137,4 +177,21 @@ footer ul li a {
 header img {
   margin-top: 20px;
   margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  #root {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "hd"
+                         "nav"
+                         "main"
+                         "abo"
+                         "ft"
+    
+  }
+  .formular img {
+    width: 90%;
+  }
 }

@@ -6,7 +6,7 @@ const Chicago = () => {
     return (
 
         <React.Fragment>
-            <section className="about">
+            <section className="about" id="chicago">
             <div>
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>            

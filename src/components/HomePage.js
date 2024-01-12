@@ -2,8 +2,8 @@ import React from 'react';
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
-import CallToAction from "../components/CallToAction";
-import BookingPage from '../components/BookingPage';
+// import CallToAction from "../components/CallToAction";
+// import BookingPage from '../components/BookingPage';
 import Chicago from '../components/Chicago';
 
 const HomePage = () => {
@@ -11,7 +11,6 @@ const HomePage = () => {
     return (
         <React.Fragment>
             <Header />
-            <CallToAction />
             <Main />
             <Chicago />
             <Footer />
