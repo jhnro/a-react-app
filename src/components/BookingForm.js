@@ -2,12 +2,34 @@ import React from "react";
 import restaurant from "../images/restaurant.jpg";
 import { useState } from "react";
 
+
+const PasswordErrorMessage = () => {
+    return (
+      <p className="FieldError">Number of guests must be at least 1 guest</p>
+    );
+  };
+
+
 const BookingForm = (props) => {
 
-    const [occasion, setOccasion] = useState("");
-    const [guests, setGuests] = useState("");
+    const [occasion, setOccasion] = useState({
+        value: "",
+        isTouched: false,
+    });
+    const [guests, setGuests] = useState({
+        value: "",
+        isTouched: false,
+    });
     const [date, setDate] = useState("");
     const [times, setTimes] = useState("");
+
+    const getIsFormValid = () => {
+        
+        return (date && 
+          times && 
+         guests >= 1 && 
+         ( occasion === "Birthday" || occasion ==="Anniversary"));
+      };
 
     const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +46,7 @@ const BookingForm = (props) => {
     return (
             <section className="formular">
                 <div className="f1">
-                <h1 data-testid="header-table">Table Reservation</h1>
+                <h1 data-testid="header-table">Table Reservation</h1>                
              <form onSubmit={handleSubmit} >
                 <fieldset>
                 <div>
@@ -40,16 +62,19 @@ const BookingForm = (props) => {
                 </div>
                 <div>
                 <label htmlFor="guests">Number of guests</label>
-                <input type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={(e) => {setGuests(e.target.value)}}/>
+                <input type="number" placeholder="0" min="0" max="10" id="guests" value={guests} onChange={(e) => {setGuests(e.target.value)}} required/>
+                {guests.isTouched && guests.value < 1 ? ( <PasswordErrorMessage /> ) : null}
                 </div>
                 <div>
                 <label htmlFor="occasion">Occasion</label>
                 <select id="occasion" key={occasion} value={occasion} onChange={(e) => setOccasion(e.target.value)} required>
-                    <option>Birthday</option>
-                    <option>Anniversary</option>
+                <option value="">Select</option>
+                    <option value="Birthday">Birthday</option>
+                    <option value="Anniversary">Anniversary</option>
                 </select>
+                {/* {occasion.isTouched && occasion.value === "" ? ( <PasswordErrorMessage /> ) : null} */}
                 </div>
-                <input aria-label="On Click" type={"submit"} value={"Make Your Reservation"} />
+                <input aria-label="On Click" type={"submit"} value={"Make Your Reservation"} disabled={!getIsFormValid()}/>
                 </fieldset>
             </form>
             </div>
