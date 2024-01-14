@@ -62,7 +62,7 @@ const BookingForm = (props) => {
                 </div>
                 <div>
                 <label htmlFor="guests">Number of guests</label>
-                <input type="number" placeholder="0" min="0" max="10" id="guests" value={guests} onChange={(e) => {setGuests(e.target.value)}} required/>
+                <input type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={(e) => {setGuests(e.target.value)}} required/>
                 {guests.isTouched && guests.value < 1 ? ( <PasswordErrorMessage /> ) : null}
                 </div>
                 <div>
